@@ -49,7 +49,7 @@ jobs:
           branch: gh-pages
           folder: src/.vuepress/dist
           token: ${{ secrets.TOKEN }}
-          repository-name: cunyu1943/cunyu1943.github.io
+          repository-name: zzdxy/zzdxy.github.io
       
       - name: 同步 Gitee
         uses: wearerequired/git-mirror-action@master
@@ -58,9 +58,9 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
         with:
           # 注意替换为你的 GitHub 源仓库地址
-          source-repo: git@github.com:cunyu1943/JavaPark.git
+          source-repo: git@github.com:zzdxy/JavaPark.git
           # 注意替换为你的 Gitee 目标仓库地址
-          destination-repo: git@gitee.com:cunyu1943/JavaPark.git
+          destination-repo: git@gitee.com:zzdxy/JavaPark.git
 
       - name: 同步部署仓库
         uses: wearerequired/git-mirror-action@master
@@ -69,18 +69,18 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
         with:
           # 注意替换为你的 GitHub 源仓库地址
-          source-repo: git@github.com:cunyu1943/cunyu1943.github.io.git
+          source-repo: git@github.com:zzdxy/zzdxy.github.io.git
           # 注意替换为你的 Gitee 目标仓库地址
-          destination-repo: git@gitee.com:cunyu1943/cunyu1943.git
+          destination-repo: git@gitee.com:zzdxy/zzdxy.git
 
       - name: 同步 Gitee Pages
         uses: yanglbme/gitee-pages-action@main
         with:
           # 注意替换为你的 Gitee 用户名
-          gitee-username: cunyu1943
+          gitee-username: zzdxy
           # 注意在 Settings->Secrets 配置 GITEE_PASSWORD
           gitee-password: ${{ secrets.GITEE_PASSWORD }}
           # 注意替换为你的 Gitee 仓库，仓库名严格区分大小写，请准确填写，否则会出错
-          gitee-repo: cunyu1943/cunyu1943
+          gitee-repo: zzdxy/zzdxy
           # 要部署的分支，默认是 master，若是其他分支，则需要指定（指定的分支必须存在）
           branch: gh-pages
